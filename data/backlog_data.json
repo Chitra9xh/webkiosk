@@ -13,7 +13,7 @@
         "type": "ELECTIVE",
         "credit": 0.0,
         "remarks": "Fail",
-        "status": "Registered"
+        "status": "Not Offered"
     },
     {
         "semester": 2,
@@ -21,6 +21,6 @@
         "type": "CORE",
         "credit": 2.0,
         "remarks": "Fail",
-        "status": "Not Registered"
+        "status": "Not Offered"
     }
 ]
