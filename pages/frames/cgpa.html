@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>JUET [Student CGPA Report]</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    
+    <style>
+        body {
+            background-color: #fce9c5;
+            margin: 0;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 14px; /* Increased from 12px */
+        }
+
+        /* --- Header Styles --- */
+        .header-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 10px;
+            width: 100%;
+        }
+
+        .header-logo {
+            margin-right: 15px; 
+        }
+
+        .header-text-block {
+            text-align: right; 
+        }
+        
+        .univ-title {
+            font-size: 20px; /* Increased from 18px */
+            font-weight: bold;
+            font-family: Verdana, sans-serif;
+            color: black;
+            text-transform: uppercase;
+        }
+        
+        .univ-sub { font-size: 13px; margin-top: 3px; font-family: Verdana; } /* Increased from 11px */
+        .univ-addr { font-size: 14px; margin-top: 3px; font-family: Verdana; } /* Increased from 12px */
+
+        /* Report Title */
+        .report-title {
+            color: #800000; 
+            font-size: 18px; /* Increased from 16px */
+            font-family: Verdana;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        /* --- Student Info Box --- */
+        .student-box {
+            width: 60%; 
+            border: 1px solid #999;
+            margin: 0 auto;
+            background-color: transparent;
+            font-family: Verdana;
+            font-size: 14px; /* Increased from 12px */
+            padding: 2px;
+        }
+        
+        .degree-header {
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px; /* Increased from 13px */
+            padding-bottom: 5px;
+        }
+
+        .student-box table {
+            width: 100%;
+            border-collapse: collapse;
+            border: none;
+        }
+        
+        .student-box td {
+            padding: 3px;
+            color: #00008b; 
+            font-weight: bold;
+            border: none;
+            font-family: Verdana;
+        }
+
+        /* --- Main Data Table --- */
+        .cgpa-table {
+            width: 70%;
+            border-collapse: collapse;
+            font-family: Verdana;
+            font-size: 15px; /* Increased from 13px */
+            border: 1px solid black;
+            margin-top: 15px;
+        }
+        
+        .cgpa-table thead tr { 
+            background-color: #ff8c00; 
+            color: white; 
+            font-weight: bold; 
+        }
+        
+        .cgpa-table th { 
+            padding: 4px 2px; 
+            border: 1px solid white; 
+            text-align: center; 
+            vertical-align: middle;
+        }
+        
+        .cgpa-table td { 
+            padding: 2px 2px 2px 8px; 
+            border-bottom: 1px solid black; 
+            border-right: 1px solid white; 
+            text-align: left; 
+            background-color: white; 
+            color: black;
+        }
+
+        .cgpa-table td:first-child {
+            text-align: center;
+            padding-left: 0;
+            border-left: 1px solid black;
+        }
+
+        .cgpa-table td:last-child {
+            border-right: 1px solid black;
+        }
+
+        a { color: blue; text-decoration: underline; cursor: pointer; }
+        
+        .note-section {
+            font-size: 13px; /* Increased from 11px */
+            font-family: Verdana;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .print-btn {
+            font-family: Arial;
+            font-size: 13px; /* Increased from 11px */
+            padding: 4px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header-wrapper">
+        <div class="header-logo">
+            <img src="../../assets/images/logo.png" width="70">
+        </div>
+        <div class="header-text-block">
+            <div class="univ-title">JAYPEE UNIVERSITY OF ENGINEERING & TECHNOLOGY-GUNA</div>
+            <div class="univ-sub">(Approved by UGC under Section 2(f) of UGC Act,1956 - Accredited with Grade "A+" by NAAC)</div>
+            <div class="univ-addr">
+                A-B Road, P.B. No-1 Raghogarh, Dist: Guna (M.P.) INDIA<br>
+                Phone :+91-7544-267051, 267310-314 Fax :+91-7544-267011<br>
+                website www.juet.ac.in
+            </div>
+        </div>
+    </div>
+
+    <div class="report-title">Student SGPA/CGPA Report</div>
+
+    <div class="student-box">
+        <div class="degree-header">B. TECH.</div>
+        <table>
+            <tr>
+                <td align="left">Student Name : <span style="color: #00008b; font-weight: normal;">Rohil Soni</span></td>
+                <td align="right">Enrollment No : <span style="color: #00008b; font-weight: normal;">241B629</span></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left">Branch : <span style="color: #00008b; font-weight: normal;">Computer Science And Engineering (ai & Ml)</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <table class="cgpa-table" align="center">
+        <thead>
+            <tr>
+                <th width="8%">Semester</th>
+                <th width="12%">Grade Points</th>
+                <th width="12%">Course Credit</th>
+                <th width="12%">Earned Credit</th>
+                <th width="15%">Points Secured<br>SGPA</th>
+                <th width="15%">Points Secured<br>CGPA</th>
+                <th width="8%">SGPA</th>
+                <th width="8%">CGPA</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr><td colspan="8" align="center">Loading data...</td></tr>
+        </tbody>
+    </table>
+
+    <div class="note-section">
+        <b>Note</b><br><br>
+        => For semester wise detail result click on respective semester<br>
+        => if any verification required please mail to <b><a href="mailto:exam.cell@juet.ac.in">exam.cell@juet.ac.in</a></b>
+    </div>
+    
+    <br><br>
+    <center><button class="print-btn" onclick="window.print()">PRINT</button></center>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('../../data/cgpa_data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.getElementById('tableBody');
+                    tbody.innerHTML = ''; 
+
+                    data.forEach(row => {
+                        const tr = document.createElement('tr');
+                        
+                        tr.innerHTML = `
+                            <td><a href="semester_result.html?sem=${row.semester}">${row.semester}</a></td>
+                            <td>${row.grade_points.toFixed(1)}</td>
+                            <td>${row.course_credit.toFixed(1)}</td>
+                            <td>${row.earned_credit.toFixed(1)}</td>
+                            <td>${row.points_sgpa.toFixed(1)}</td>
+                            <td>${row.points_cgpa.toFixed(1)}</td>
+                            <td>${row.sgpa}</td>
+                            <td>${row.cgpa}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                })
+                .catch(err => console.error("Error loading CGPA data:", err));
+        });
+    </script>
+
+</body>
+</html>

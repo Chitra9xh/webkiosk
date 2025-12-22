@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>JUET [Semester Result]</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    
+    <style>
+        body {
+            background-color: #fce9c5;
+            margin: 0;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        /* Header Styles */
+        .header-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 10px;
+            width: 100%;
+        }
+        .header-logo { margin-right: 15px; }
+        .header-text-block { text-align: right; }
+        .univ-title { font-size: 20px; font-weight: bold; font-family: Verdana; color: black; text-transform: uppercase; }
+        .univ-sub { font-size: 13px; margin-top: 3px; font-family: Verdana; }
+        .univ-addr { font-size: 14px; margin-top: 3px; font-family: Verdana; }
+
+        /* Student Info Box */
+        .student-box {
+            width: 70%;
+            border: 1px solid #999;
+            margin: 15px auto;
+            background-color: transparent;
+            font-family: Verdana;
+            font-size: 14px;
+            padding: 2px;
+        }
+        .degree-header { text-align: center; font-weight: bold; font-size: 15px; padding-bottom: 5px; }
+        .student-box td { padding: 3px; color: #00008b; font-weight: bold; border: none; font-family: Verdana; }
+
+        /* --- Result Table Styles (Updated) --- */
+        .res-table {
+            width: 95%;
+            border-collapse: collapse;
+            font-family: Arial;
+            font-size: 12px; /* Decreased by 2px for table only */
+            border: 2px solid maroon; /* Keep outer border */
+            margin-top: 10px;
+        }
+        
+        .res-table thead tr { 
+            background-color: #ffa900; 
+            color: white; 
+            font-weight: bold; 
+        }
+        
+        .res-table th { 
+            padding: 3px; 
+            border: none; /* Removed separators */
+            text-align: center; 
+        }
+        
+        .res-table td { 
+            padding: 2px; /* Decreased padding */
+            border: none; /* Removed separators */
+            text-align: center; 
+            color: black;
+        }
+
+        /* Add a background color to the total row to distinguish it */
+        .res-table tr:nth-last-child(1) {
+             background-color: #ffa900;
+             font-weight: bold;
+        }
+
+        /* Helper Classes */
+        .text-red { color: red !important; }
+        .summary-box {
+            margin-top: 10px;
+            border: 1px solid gray;
+            padding: 5px;
+            display: inline-block;
+        }
+        .footer-logo-table {
+            border: 2px outset grey;
+            background-color: white;
+            padding: 2px;
+            margin-bottom: 5px;
+        }
+        a { color: blue; text-decoration: underline; }
+    </style>
+</head>
+
+<body>
+
+    <div class="header-wrapper">
+        <div class="header-logo"><img src="../../assets/images/logo.png" width="70"></div>
+        <div class="header-text-block">
+            <div class="univ-title">JAYPEE UNIVERSITY OF ENGINEERING & TECHNOLOGY-GUNA</div>
+            <div class="univ-sub">(Approved by UGC under Section 2(f) of UGC Act,1956 - Accredited with Grade "A+" by NAAC)</div>
+            <div class="univ-addr">A-B Road, P.B. No-1 Raghogarh, Dist: Guna (M.P.) INDIA<br>Phone :+91-7544-267051, 267310-314 Fax :+91-7544-267011<br>website www.juet.ac.in</div>
+        </div>
+    </div>
+
+    <center>
+        <hr>
+        <b><font color="black">Student Examination Result Details of Semester <span id="semNum">...</span></font></b>
+    </center>
+
+    <div class="student-box">
+        <div class="degree-header">B. TECH.</div>
+        <table width="100%">
+            <tr>
+                <td align="left">Student Name : <span style="color: #00008b; font-weight: normal;">Rohil Soni</span></td>
+                <td align="right">Enrollment No : <span style="color: #00008b; font-weight: normal;">241B629</span></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left">Branch : <span style="color: #00008b; font-weight: normal;">Computer Science And Engineering (ai & Ml)</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <table class="res-table" align="center">
+        <thead>
+            <tr>
+                <th>Subject Code</th>
+                <th>Subject</th>
+                <th>Grade Points</th>
+                <th>Course Credit Points</th>
+                <th>Earned Credit</th>
+                <th>SGPA Points</th>
+                <th>CGPA Points</th>
+                <th>Grade</th>
+                <th>Fail ?</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr><td colspan="9">Loading...</td></tr>
+        </tbody>
+    </table>
+
+    <center>
+        <div class="summary-box">
+            <font color="blue" face="Arial" size="2">SGPA : <span id="sgpaVal"></span></font> &nbsp;&nbsp;&nbsp;
+            <font color="blue" face="Arial" size="2">CGPA : <span id="cgpaVal"></span></font>
+        </div>
+        <br><br>
+        <font color="black" face="Arial" size="2"> * The CGPA of <span id="cgpaText"></span> on the scale of 10 equates to <span id="pctText"></span> percent as per Conversion Table -2013.</font>
+        
+        <br><br>
+        <hr align="center" color="black" noshade style="width: 80%;">
+        
+        <br>
+        <font size="3" color="black"><b>Note</b></font><br>
+        => if any verification required please mail to <b> <a href="mailto:exam.cell@juet.ac.in">exam.cell@juet.ac.in</a> </b>
+        <br><br>
+        <button onclick="window.print()">PRINT</button>
+        <br><br><br>
+
+        <table class="footer-logo-table" align="center">
+            <tr>
+                <td>
+                    <img src="../../assets/images/CampusConnectLogo.bmp" width="40" height="40"><br>
+                    <font size="2" style="font-family: Arial"><b>&nbsp;Campus Lynx</b></font>
+                </td>
+                <td>
+                    <font size="1" color="BLACK">&nbsp;Software developed and maintained by </font><br>
+                    <strong>&nbsp;<a href="#" style="color:black; font-size:12px;">JIL Information Technology Ltd.</a>&nbsp;</strong>
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const sem = params.get('sem');
+            if(sem) document.getElementById('semNum').innerText = sem;
+
+            fetch('../../data/semester_results.json')
+                .then(response => response.json())
+                .then(allData => {
+                    const data = allData[sem];
+                    if(!data) {
+                        document.getElementById('tableBody').innerHTML = '<tr><td colspan="9">No data found for this semester.</td></tr>';
+                        return;
+                    }
+                    renderTable(data);
+                })
+                .catch(err => console.error(err));
+        });
+
+        function renderTable(data) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            data.subjects.forEach(sub => {
+                const tr = document.createElement('tr');
+                const textColor = sub.highlight ? 'color: red;' : 'color: black;'; 
+                
+                tr.innerHTML = `
+                    <td><font style="${textColor}">${sub.code}</font></td>
+                    <td><font style="${textColor}">${sub.name}</font></td>
+                    <td><font style="${textColor}">${sub.gp}</font></td>
+                    <td><font style="${textColor}">${sub.credit}</font></td>
+                    <td><font style="${textColor}">${sub.earned}</font></td>
+                    <td><font style="${textColor}">${sub.sgpa_pts}</font></td>
+                    <td><font style="${textColor}">${sub.cgpa_pts}</font></td>
+                    <td><font style="${textColor}">${sub.grade}</font></td>
+                    <td><font style="${textColor}">${sub.fail}</font></td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            const totalTr = document.createElement('tr');
+            totalTr.innerHTML = `
+                <td colspan="2" align="right">Total &nbsp;</td>
+                <td>${data.total.gp}</td>
+                <td>${data.total.credit}</td>
+                <td>${data.total.earned}</td>
+                <td>${data.total.sgpa_pts}</td>
+                <td>${data.total.cgpa_pts}</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            `;
+            tbody.appendChild(totalTr);
+
+            document.getElementById('sgpaVal').innerText = data.sgpa;
+            document.getElementById('cgpaVal').innerText = data.cgpa;
+            document.getElementById('cgpaText').innerText = data.cgpa;
+            document.getElementById('pctText').innerText = (data.cgpa * 10).toFixed(1);
+        }
+    </script>
+</body>
+</html>

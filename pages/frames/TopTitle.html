@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Top Frame</title>
+    <style>
+        A:hover { color: white; }
+    </style>
+    <script language="JavaScript">
+        // Old school status bar scroller from the source code
+        function scrollit(seed) {
+            var m1 = "### Welcome to Jaypee University of Information Technology, Guna ###";
+            var msg = m1;
+            var out = " ";
+            if (seed > 100) {
+                seed--;
+                setTimeout("scrollit(" + seed + ")", 100);
+            } else if (seed <= 100 && seed > 0) {
+                for (c = 0; c < seed; c++) out += " ";
+                out += msg;
+                seed--;
+                window.status = out; // Modern browsers might block this, but it's in the source
+                setTimeout("scrollit(" + seed + ")", 100);
+            } else if (seed <= 0) {
+                if (-seed < msg.length) {
+                    out += msg.substring(-seed, msg.length);
+                    seed--;
+                    window.status = out;
+                    setTimeout("scrollit(" + seed + ")", 100);
+                } else {
+                    window.status = " ";
+                    setTimeout("scrollit(100)", 75);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body bgcolor="#e68a06" topmargin="0" rightmargin="0" leftmargin="0" bottommargin="0" onload="scrollit(150)">
+
+    <table width="100%" style="BACKGROUND-REPEAT: no-repeat" background="../../assets/images/Top.jpg" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr valign="bottom">
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                    <br><br>
+                    <marquee style="COLOR: white; FONT-FAMILY: Arial; FONT-SIZE: x-small; FONT-WEIGHT: bold; HEIGHT: 8px; WIDTH: 620px" scrolldelay="225">
+                        NO MESSAGE FOUND
+                    </marquee>
+                </td>
+                <td align="right" style="padding-right: 10px;">
+                    <font face="Arial" size="2">Welcome<br>ROHIL</font><br>
+                    <a href="../../index.html" target="_top" title="Close/Logout KIOSK Site">
+                        <font color="darkblue" face="Arial" size="2"><b>Signout</b></font>
+                    </a>&nbsp;<br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

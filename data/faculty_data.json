@@ -1,0 +1,16 @@
+[
+    { "sno": 1, "subject": "DATA STRUCTURES LAB(CS203)", "lecture": "", "tutorial": "", "practical": "MAHAKANT SHARMA" },
+    { "sno": 2, "subject": "UI/UX LAB(CS205)", "lecture": "", "tutorial": "", "practical": "DINESH KUMAR VERMA" },
+    { "sno": 3, "subject": "DIGITAL SYSTEMS AND MICROPROCESSORS LAB(EC210)", "lecture": "", "tutorial": "", "practical": "RAVI KUMAR" },
+    { "sno": 4, "subject": "DATABASE SYSTEMS LAB(CS204)", "lecture": "", "tutorial": "", "practical": "JITENDRA PARMAR" },
+    { "sno": 5, "subject": "DISCRETE MATHEMATICS(MA105)", "lecture": "VAIBHAV BISHT", "tutorial": "VAIBHAV BISHT", "practical": "" },
+    { "sno": 6, "subject": "DIGITAL SYSTEMS AND MICROPROCESSORS(EC110)", "lecture": "DEEPAK SHARMA", "tutorial": "DEEPAK SHARMA", "practical": "" },
+    { "sno": 7, "subject": "DATABASE SYSTEMS(CS104)", "lecture": "AMIT KUMAR SRIVASTAVA (CSE)", "tutorial": "AMIT KUMAR SRIVASTAVA (CSE)", "practical": "" },
+    { "sno": 8, "subject": "CAREER MANAGEMENT AND DEVELOPMENT(HS007)", "lecture": "NEERAJ JAIN", "tutorial": "", "practical": "" },
+    { "sno": 9, "subject": "DATA STRUCTURES(CS103)", "lecture": "MAHAKANT SHARMA", "tutorial": "MAHAKANT SHARMA", "practical": "" },
+    { "sno": 10, "subject": "ADVANCED PROGRAMMING LAB-1(CS206)", "lecture": "", "tutorial": "", "practical": "PAVAN MISHRA" },
+    { "sno": 11, "subject": "ENVIRONMENTAL SCIENCE(GE001)", "lecture": "JITENDRA KUMAR SAHU", "tutorial": "", "practical": "" },
+    { "sno": 12, "subject": "ENGINEERING PHYSICS - 2(PH102)", "lecture": "MANISH KUMAR VISHWAKARMA", "tutorial": "MANISH KUMAR VISHWAKARMA", "practical": "" },
+    { "sno": 13, "subject": "TECHNIQUES FOR DECISION MAKING(HS103)", "lecture": "VIKRAM SINGH CHOUHAN", "tutorial": "VIKRAM SINGH CHOUHAN", "practical": "" },
+    { "sno": 14, "subject": "INTRODUCTION TO ENGINEERING SIMULATIONS(ME005)", "lecture": "PANKAJ DUMKA", "tutorial": "", "practical": "" }
+]

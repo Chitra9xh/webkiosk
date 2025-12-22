@@ -1,0 +1,61 @@
+{
+    "3": {
+        "semester": 3,
+        "sgpa": 4.8,
+        "cgpa": 4.44,
+        "subjects": [
+            { "code": "CS103", "name": "DATA STRUCTURES", "gp": 4, "credit": 4, "earned": 4, "sgpa_pts": 16, "cgpa_pts": 16, "grade": "P", "fail": "N" },
+            { "code": "CS104", "name": "DATABASE SYSTEMS", "gp": 4, "credit": 4, "earned": 4, "sgpa_pts": 16, "cgpa_pts": 16, "grade": "P", "fail": "N" },
+            { "code": "EC110", "name": "DIGITAL SYSTEMS AND MICROPROCESSORS", "gp": 5, "credit": 4, "earned": 4, "sgpa_pts": 20, "cgpa_pts": 20, "grade": "C", "fail": "N" },
+            { "code": "HS103", "name": "TECHNIQUES FOR DECISION MAKING", "gp": 6, "credit": 3, "earned": 3, "sgpa_pts": 18, "cgpa_pts": 18, "grade": "B", "fail": "N" },
+            { "code": "CS206", "name": "ADVANCED PROGRAMMING LAB-1", "gp": 5, "credit": 1, "earned": 1, "sgpa_pts": 5, "cgpa_pts": 5, "grade": "C", "fail": "N" },
+            { "code": "CS203", "name": "DATA STRUCTURES LAB", "gp": 4, "credit": 1, "earned": 1, "sgpa_pts": 4, "cgpa_pts": 4, "grade": "P", "fail": "N" },
+            { "code": "CS204", "name": "DATABASE SYSTEMS LAB", "gp": 5, "credit": 1, "earned": 1, "sgpa_pts": 5, "cgpa_pts": 5, "grade": "C", "fail": "N" },
+            { "code": "EC210", "name": "DIGITAL SYSTEMS AND MICROPROCESSORS LAB", "gp": 7, "credit": 1, "earned": 1, "sgpa_pts": 7, "cgpa_pts": 7, "grade": "B+", "fail": "N" },
+            { "code": "CS205", "name": "UI/UX LAB", "gp": 5, "credit": 1, "earned": 1, "sgpa_pts": 5, "cgpa_pts": 5, "grade": "C", "fail": "N" },
+            { "code": "HS007", "name": "CAREER MANAGEMENT AND DEVELOPMENT", "gp": 0, "credit": 0, "earned": 0, "sgpa_pts": 0, "cgpa_pts": 0, "grade": "AP", "fail": "N" },
+            { "code": "GE001", "name": "ENVIRONMENTAL SCIENCE", "gp": 0, "credit": 0, "earned": 0, "sgpa_pts": 0, "cgpa_pts": 0, "grade": "AB", "fail": "Y", "highlight": true }
+        ],
+        "total": {
+            "gp": 45.0, "credit": 20.0, "earned": 20.0, "sgpa_pts": 96.0, "cgpa_pts": 96.0
+        }
+    },
+    "2": {
+        "semester": 2,
+        "sgpa": 2.56,
+        "cgpa": 4.27,
+        "subjects": [
+            { "code": "MA105", "name": "DISCRETE MATHEMATICS", "gp": 0, "credit": 4, "earned": 0, "sgpa_pts": 0, "cgpa_pts": 0, "grade": "F", "fail": "Y", "highlight": true },
+            { "code": "EC101", "name": "ELECTRICAL SCIENCE", "gp": 0, "credit": 4, "earned": 0, "sgpa_pts": 0, "cgpa_pts": 0, "grade": "AB", "fail": "Y", "highlight": true },
+            { "code": "PH102", "name": "ENGINEERING PHYSICS - 2", "gp": 5, "credit": 4, "earned": 4, "sgpa_pts": 20, "cgpa_pts": 20, "grade": "C", "fail": "N" },
+            { "code": "CS102", "name": "OBJECT ORIENTED PROGRAMMING", "gp": 4, "credit": 4, "earned": 4, "sgpa_pts": 16, "cgpa_pts": 16, "grade": "P", "fail": "N" },
+            { "code": "HS104", "name": "LIFE SKILLS AND EFFECTIVE COMMUNICATION", "gp": 0, "credit": 2, "earned": 0, "sgpa_pts": 0, "cgpa_pts": 0, "grade": "AB", "fail": "Y", "highlight": true },
+            { "code": "ME203", "name": "ENGINEERING DRAWING & DESIGN LAB", "gp": 5, "credit": 1.5, "earned": 1.5, "sgpa_pts": 7.5, "cgpa_pts": 7.5, "grade": "C", "fail": "N" },
+            { "code": "EC203", "name": "ELECTRICAL SCIENCE LAB", "gp": 5, "credit": 1, "earned": 1, "sgpa_pts": 5, "cgpa_pts": 5, "grade": "C", "fail": "N" },
+            { "code": "PH202", "name": "ENGINEERING PHYSICS LAB - 2", "gp": 5, "credit": 1, "earned": 1, "sgpa_pts": 5, "cgpa_pts": 5, "grade": "C", "fail": "N" },
+            { "code": "CS202", "name": "OBJECT ORIENTED PROGRAMMING LAB", "gp": 4, "credit": 1, "earned": 1, "sgpa_pts": 4, "cgpa_pts": 4, "grade": "P", "fail": "N" },
+            { "code": "ME005", "name": "INTRODUCTION TO ENGINEERING SIMULATIONS", "gp": 0, "credit": 0, "earned": 0, "sgpa_pts": 0, "cgpa_pts": 0, "grade": "AB", "fail": "Y", "highlight": true }
+        ],
+        "total": {
+            "gp": 28.0, "credit": 22.5, "earned": 12.5, "sgpa_pts": 57.5, "cgpa_pts": 57.5
+        }
+    },
+    "1": {
+        "semester": 1,
+        "sgpa": 6.26,
+        "cgpa": 6.26,
+        "subjects": [
+            { "code": "CS101", "name": "COMPUTER PROGRAMMING", "gp": 7, "credit": 4, "earned": 4, "sgpa_pts": 28, "cgpa_pts": 28, "grade": "B+", "fail": "N" },
+            { "code": "MA101", "name": "ENGINEERING MATHEMATICS", "gp": 5, "credit": 4, "earned": 4, "sgpa_pts": 20, "cgpa_pts": 20, "grade": "C", "fail": "N" },
+            { "code": "PH101", "name": "ENGINEERING PHYSICS- 1", "gp": 6, "credit": 4, "earned": 4, "sgpa_pts": 24, "cgpa_pts": 24, "grade": "B", "fail": "N" },
+            { "code": "HS101", "name": "ENGLISH", "gp": 6, "credit": 3, "earned": 3, "sgpa_pts": 18, "cgpa_pts": 18, "grade": "B", "fail": "N" },
+            { "code": "CS201", "name": "COMPUTER PROGRAMMING LAB", "gp": 7, "credit": 2, "earned": 2, "sgpa_pts": 14, "cgpa_pts": 14, "grade": "B+", "fail": "N" },
+            { "code": "ME201", "name": "WORKSHOP PRACTICES", "gp": 8, "credit": 1.5, "earned": 1.5, "sgpa_pts": 12, "cgpa_pts": 12, "grade": "A", "fail": "N" },
+            { "code": "PH201", "name": "ENGINEERING PHYSICS LAB- 1", "gp": 6, "credit": 1, "earned": 1, "sgpa_pts": 6, "cgpa_pts": 6, "grade": "B", "fail": "N" },
+            { "code": "HS001", "name": "HUMAN VALUES AND PROFESSIONAL ETHICS", "gp": 0, "credit": 0, "earned": 0, "sgpa_pts": 0, "cgpa_pts": 0, "grade": "AP", "fail": "N" }
+        ],
+        "total": {
+            "gp": 45.0, "credit": 19.5, "earned": 19.5, "sgpa_pts": 122.0, "cgpa_pts": 122.0
+        }
+    }
+}

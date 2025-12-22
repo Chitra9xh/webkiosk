@@ -1,0 +1,32 @@
+[
+    {
+        "semester": 1,
+        "grade_points": 45.0,
+        "course_credit": 19.5,
+        "earned_credit": 19.5,
+        "points_sgpa": 122.0,
+        "points_cgpa": 122.0,
+        "sgpa": 6.26,
+        "cgpa": 6.26
+    },
+    {
+        "semester": 2,
+        "grade_points": 28.0,
+        "course_credit": 22.5,
+        "earned_credit": 12.5,
+        "points_sgpa": 57.5,
+        "points_cgpa": 57.5,
+        "sgpa": 2.56,
+        "cgpa": 4.27
+    },
+    {
+        "semester": 3,
+        "grade_points": 45.0,
+        "course_credit": 20.0,
+        "earned_credit": 20.0,
+        "points_sgpa": 96.0,
+        "points_cgpa": 96.0,
+        "sgpa": 4.8,
+        "cgpa": 4.44
+    }
+]

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>JUET [ Student Class Attendance ]</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    
+    <style>
+        body { background-color: #fce9c5; margin: 0; font-family: Verdana, Arial, sans-serif; }
+        
+        .header-title { color: #a52a2a; font-size: medium; font-weight: bold; font-family: Verdana; }
+        
+        /* Filter Table */
+        .student-info-table { width: 100%; border-collapse: collapse; border: 1px solid black; background-color: transparent; }
+        .student-info-table td { padding: 5px; font-family: Arial; font-size: 13px; }
+        
+        /* Main Attendance Table */
+        .att-table { 
+            width: 98%; 
+            border-collapse: collapse; 
+            margin-top: 10px; 
+            font-family: Arial; 
+            font-size: 14px; /* Increased Font Size */
+            border: 1px solid black; /* Outer border */
+        }
+        
+        .att-table thead tr { background-color: #c00000; color: white; font-weight: bold; }
+        
+        .att-table th { 
+            padding: 6px; 
+            border-top: 1px solid white; 
+            border-bottom: 1px solid white;
+            /* No vertical borders in header */
+        }
+        
+        .att-table td { 
+            padding: 6px; 
+            text-align: center; 
+            background-color: white; 
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            border-left: none;  /* Removed vertical lines */
+            border-right: none; /* Removed vertical lines */
+        }
+        
+        /* Specific alignment for Subject column */
+        .att-table td:nth-child(2) { text-align: left; padding-left: 10px; }
+
+        a { color: blue; text-decoration: underline; cursor: pointer; }
+        
+        .sort-arrow { width: 10px; height: 10px; margin-left: 5px; }
+    </style>
+    
+    <script src="../../assets/js/attendance.js" defer></script>
+</head>
+
+<body>
+
+<center>
+    <br>
+    <span class="header-title">Student Attendance</span>
+    <br><br>
+</center>
+
+<form onsubmit="event.preventDefault(); loadAttendance();">
+<table class="student-info-table" align="center" rules="groups">
+    <tbody>
+        <tr>
+            <td><strong>Name:&nbsp;</strong>Rohil Soni [241B629]</td>
+            <td><strong>Course/Branch:&nbsp;</strong>B.T.(CSAIML)</td>
+            <td><strong>Current Semester:&nbsp;</strong>3</td>
+        </tr>
+        <tr style="border-top: 1px solid black;">
+            <td colspan="3" style="padding: 5px;">
+                <strong>Exam Code</strong>
+                <select id="examCode" style="width: 140px">    
+                    <option value="2025ODDSEM" selected>2025ODDSEM</option>
+                </select>
+                <input type="submit" value="View Attendance">
+            </td>
+        </tr>
+    </tbody>
+</table>
+</form>
+
+<table class="att-table" align="center" id="attendanceTable" style="display:none;">
+    <thead>
+        <tr>
+            <th width="5%">SNo</th>
+            <th width="40%">Subject</th>
+            <th width="15%">Lecture+Tutorial(%)</th>
+            <th width="10%">Lecture(%)</th>
+            <th width="10%">Tutorial(%)</th>
+            <th width="10%">Practical(%)</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        </tbody>
+</table>
+
+</body>
+</html>

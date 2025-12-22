@@ -1,0 +1,16 @@
+[
+    { "sno": 1, "subject": "CAREER MANAGEMENT AND DEVELOPMENT(HS007)", "credit": 0, "type": "Core" },
+    { "sno": 2, "subject": "ENVIRONMENTAL SCIENCE(GE001)", "credit": 0, "type": "Core" },
+    { "sno": 3, "subject": "INTRODUCTION TO ENGINEERING SIMULATIONS(ME005)", "credit": 0, "type": "Core" },
+    { "sno": 4, "subject": "ADVANCED PROGRAMMING LAB-1(CS206)", "credit": 1, "type": "Core" },
+    { "sno": 5, "subject": "DATA STRUCTURES LAB(CS203)", "credit": 1, "type": "Core" },
+    { "sno": 6, "subject": "DATABASE SYSTEMS LAB(CS204)", "credit": 1, "type": "Core" },
+    { "sno": 7, "subject": "DIGITAL SYSTEMS AND MICROPROCESSORS LAB(EC210)", "credit": 1, "type": "Core" },
+    { "sno": 8, "subject": "UI/UX LAB(CS205)", "credit": 1, "type": "Core" },
+    { "sno": 9, "subject": "TECHNIQUES FOR DECISION MAKING(HS103)", "credit": 3, "type": "Core" },
+    { "sno": 10, "subject": "DATA STRUCTURES(CS103)", "credit": 4, "type": "Core" },
+    { "sno": 11, "subject": "DATABASE SYSTEMS(CS104)", "credit": 4, "type": "Core" },
+    { "sno": 12, "subject": "DIGITAL SYSTEMS AND MICROPROCESSORS(EC110)", "credit": 4, "type": "Core" },
+    { "sno": 13, "subject": "DISCRETE MATHEMATICS(MA105)", "credit": 4, "type": "Core" },
+    { "sno": 14, "subject": "ENGINEERING PHYSICS - 2(PH102)", "credit": 4, "type": "Core" }
+]

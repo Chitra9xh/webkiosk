@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>JUET [Student Attendance Report]</title>
+    <style>
+        body { background-color: #fce9c5; margin: 0; font-family: Verdana, sans-serif; }
+        
+        .title-box { text-align: center; color: #a52a2a; font-size: medium; font-weight: bold; margin-top: 5px; }
+        
+        .info-box { text-align: center; color: #00008b; font-family: Arial; font-size: 13px; margin: 10px 0; }
+        
+        .sort-table {
+            width: 70%;
+            border-collapse: collapse;
+            font-family: Arial;
+            font-size: 12px;
+            border: 1px solid black;
+        }
+        
+        .sort-table thead tr { background-color: #c00000; color: white; }
+        .sort-table th { padding: 5px; border: 1px solid white; text-align: center; font-weight: bold; }
+        
+        .sort-table td { 
+            border: 1px solid black; 
+            padding: 5px; 
+            text-align: center; 
+            background-color: white; /* Default bg */
+        }
+
+        .status-present { color: Green; font-weight: bold; }
+        .status-absent { color: Red; font-weight: bold; }
+        
+        .note-box { width: 70%; margin: 20px auto; font-family: Arial; font-size: 12px; color: red; }
+    </style>
+</head>
+<body>
+
+    <div class="title-box">Student Lecture Attendance Detail .</div>
+
+    <div class="info-box">
+        Subject Code: <b id="subName">LOADING...</b> &nbsp; &nbsp;
+        Student Name: <b>Rohil Soni [241B629]</b> &nbsp; &nbsp; 
+        LTP: <b id="ltpType">...</b>
+    </div>
+
+    <table align="center" class="sort-table">
+        <thead>
+            <tr>
+                <th>SNo</th>
+                <th>Date</th>
+                <th>Attendance By</th>
+                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Status</th>
+                <th>Class Type</th>
+                <th>LTP</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr><td colspan="6">Loading...</td></tr>
+        </tbody>
+    </table>
+
+    <div class="note-box">
+        <h4><ul><b><u>Note:</u></b><br>
+        <li>Your Registration Date: 21-07-2025</li>
+        <li>Class start Date: 22-07-2025 10:00 am</li>
+        <li>Attendance before registration date shall be considered as Absent.</li>
+        </ul></h4>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Get Params from URL (e.g., ?code=HS007&type=Lecture&subject=CAREER...)
+            const params = new URLSearchParams(window.location.search);
+            const code = params.get('code');
+            const type = params.get('type');
+            const subjectFullName = params.get('subject');
+
+            // 2. Set Header Info
+            document.getElementById('subName').innerText = subjectFullName || code;
+            document.getElementById('ltpType').innerText = type;
+
+            // 3. Construct Filename (e.g., ../../data/details/HS007_Lecture.json)
+            const filePath = `../../data/details/${code}_${type}.json`;
+
+            // 4. Fetch Data
+            fetch(filePath)
+                .then(response => {
+                    if (!response.ok) throw new Error("File not found");
+                    return response.json();
+                })
+                .then(data => renderRows(data))
+                .catch(err => {
+                    document.getElementById('tableBody').innerHTML = 
+                        `<tr><td colspan="6" style="color:red; font-weight:bold;">
+                            No detailed data found for ${code} (${type}). <br>
+                            (Make sure data/details/${code}_${type}.json exists)
+                        </td></tr>`;
+                });
+        });
+
+        function renderRows(data) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                
+                // Color Logic
+                const statusClass = (row.status.toLowerCase() === 'present') ? 'status-present' : 'status-absent';
+
+                tr.innerHTML = `
+                    <td>${row.sno}.</td>
+                    <td nowrap>${row.date}</td>
+                    <td nowrap>${row.faculty}</td>
+                    <td><span class="${statusClass}">${row.status}</span></td>
+                    <td>${row.type}</td>
+                    <td><b>${row.ltp}</b></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+    </script>
+</body>
+</html>

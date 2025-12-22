@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>JUET [ View Opted Faculty ]</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    
+    <style>
+        body { background-color: #fce9c5; margin: 0; font-family: Arial, sans-serif; }
+        
+        .page-heading {
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Filter Table */
+        .info-table {
+            border-collapse: separate;
+            border-spacing: 1px;
+            border: 1px solid black;
+            font-family: Arial;
+            font-size: 13px;
+            background-color: transparent;
+            width: 95%;
+        }
+        .info-table td { padding: 4px; }
+
+        /* Main Data Table */
+        .faculty-table {
+            width: 100%;
+            border-collapse: collapse; /* Ensures borders touch each other */
+            font-family: Arial;
+            font-size: 13px;
+            border: 2px solid #c00000; /* Thick red outer border */
+            margin-top: 10px;
+            background-color: white; /* Sets the whole table bg to white */
+        }
+        
+        .faculty-table thead tr { 
+            background-color: #c00000; 
+            color: white; 
+            font-weight: bold; 
+        }
+        
+        /* Header Borders: White */
+        .faculty-table th { 
+            padding: 4px; 
+            border: 1px solid white; 
+            text-align: left; 
+        }
+        
+        /* Data Borders: Black, Background: White */
+        .faculty-table td { 
+            padding: 4px; 
+            border: 1px solid black; 
+            text-align: left; 
+            background-color: white; 
+            color: black;
+        }
+
+        /* Footer */
+        .footer-logo-table {
+            margin-top: 20px;
+        }
+        a { color: blue; text-decoration: underline; }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-heading">Registered Subjects Faculty for Student</div>
+
+    <form onsubmit="event.preventDefault(); loadFaculty();">
+        <table class="info-table" align="center" rules="groups">
+            <tbody>
+                <tr>
+                    <td>
+                        <font color="black"><strong> Name:&nbsp;</strong></font>Rohil Soni[241B629]
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="black"><strong>Course/Branch:&nbsp;</strong></font>B.T.(CSAIML)
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="black"><strong>Current Sem:&nbsp;</strong></font>4
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;&nbsp;<font color="black"><strong>Exam Code</strong></font>
+                        <select id="examCode" style="WIDTH: 140px">    
+                            <option value="2025ODDSEM" selected>2025ODDSEM</option>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="submit" value="Show">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <div id="tableContainer" style="display: none;">
+        <table class="faculty-table" align="center">
+            <thead>
+                <tr>
+                    <th width="5%">SNo.</th>
+                    <th width="35%">Subject</th>
+                    <th width="20%">Faculty(Lecture)</th>
+                    <th width="20%">Faculty(Tutorial)</th>
+                    <th width="20%">Faculty(Practical)</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                </tbody>
+        </table>
+    </div>
+
+    <br>
+    
+    <center>
+        <table class="footer-logo-table" align="center">
+            <tr>
+                <td valign="middle">
+                    <img src="../../assets/images/CampusConnectLogo.bmp" width="28" height="28" align="middle">
+                    <font size="4" style="font-family: cursive"><b>Campus Connect</b></font>&nbsp;&nbsp;&nbsp;
+                    <font size="2" style="font-family: cursive">... an <b>IRP</b> Solution</font><br>
+                    A product of <strong>JIL Information Technology Ltd.</strong><br>
+                    <font size="2">For your comments or suggestions please send an email at <a href="mailto:info@juet.ac.in">info@juet.ac.in</a></font>
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    <script>
+        function loadFaculty() {
+            fetch('../../data/faculty_data.json')
+                .then(response => response.json())
+                .then(data => renderTable(data))
+                .catch(err => console.error("Error loading faculty data:", err));
+        }
+
+        function renderTable(data) {
+            document.getElementById('tableContainer').style.display = "block";
+            const tbody = document.getElementById('tableBody');
+            
+            tbody.innerHTML = ''; 
+
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row.sno}.</td>
+                    <td>${row.subject}</td>
+                    <td>${row.lecture || '&nbsp;'}</td>
+                    <td>${row.tutorial || '&nbsp;'}</td>
+                    <td>${row.practical || '&nbsp;'}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>JUET [ View Opted Subjects ]</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    
+    <style>
+        body { background-color: #fce9c5; margin: 0; font-family: Arial, sans-serif; }
+        
+        .page-heading {
+            text-align: center;
+            color: #a52a2a; 
+            font-size: medium;
+            font-family: fantasy; 
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Filter Table */
+        .info-table {
+            border-collapse: separate;
+            border-spacing: 1px;
+            border: 1px solid black;
+            font-family: Arial;
+            font-size: 13px;
+            background-color: transparent;
+            width: 95%;
+        }
+        .info-table td { padding: 4px; }
+
+        /* Main Data Table */
+        .subjects-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial;
+            font-size: 14px;
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+        
+        .subjects-table thead tr { 
+            background-color: #c00000; 
+            color: white; 
+            font-weight: bold; 
+        }
+        
+        .subjects-table th { 
+            padding: 2px 4px; /* Reduced Padding */
+            border: 1px solid white; 
+            text-align: left; /* Left Aligned */
+        }
+        
+        .subjects-table td { 
+            padding: 2px 4px; /* Reduced Padding */
+            border: 1px solid black; 
+            text-align: left; /* Left Aligned */
+            background-color: transparent;
+            color: black;
+        }
+
+        .total-row td {
+            font-weight: bold;
+            text-align: right; /* Keep Total label right aligned for neatness, or change to left if preferred */
+            border-top: 2px solid black;
+            padding-right: 10px;
+        }
+        
+        /* Exception: Make the Total Value center or left? Let's keep it aligned with the column above */
+        .total-row td:nth-child(2) {
+            text-align: left; 
+        }
+
+        /* Footer */
+        .footer-logo-table {
+            margin-top: 20px;
+        }
+        a { color: blue; text-decoration: underline; }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-heading">Registered Subjects of Student</div>
+
+    <form onsubmit="event.preventDefault(); loadSubjects();">
+        <table class="info-table" align="center" rules="groups">
+            <tbody>
+                <tr>
+                    <td>
+                        <font color="black"><strong> Name:&nbsp;</strong></font>Rohil Soni[241B629]
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="black"><strong>Course/Branch:&nbsp;</strong></font>B.T.(CSAIML)
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="black"><strong>Current Sem:&nbsp;</strong></font>4
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;&nbsp;<font color="black"><strong>Exam Code</strong></font>
+                        <select id="examCode" style="WIDTH: 140px">    
+                            <option value="2025ODDSEM" selected>2025ODDSEM</option>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="submit" value="Show">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <div id="tableContainer" style="display: none;">
+        <table class="subjects-table" align="center">
+            <thead>
+                <tr>
+                    <th width="10%">SNo.</th>
+                    <th width="60%">Subject</th>
+                    <th width="15%">Credit</th>
+                    <th width="15%">Core/Elective</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                </tbody>
+            <tfoot id="tableFooter">
+                </tfoot>
+        </table>
+    </div>
+
+    <br>
+    
+    <center>
+        <table class="footer-logo-table" align="center">
+            <tr>
+                <td valign="middle">
+                    <img src="../../assets/images/CampusConnectLogo.bmp" width="28" height="28" align="middle">
+                    <font size="4" style="font-family: cursive"><b>Campus Connect</b></font>&nbsp;&nbsp;&nbsp;
+                    <font size="2" style="font-family: cursive">... an <b>IRP</b> Solution</font><br>
+                    A product of <strong>JIL Information Technology Ltd.</strong><br>
+                    <font size="2">For your comments or suggestions please send an email at <a href="mailto:info@juet.ac.in">info@juet.ac.in</a></font>
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    <script>
+        function loadSubjects() {
+            fetch('../../data/subjects_data.json')
+                .then(response => response.json())
+                .then(data => renderTable(data))
+                .catch(err => console.error("Error loading subjects:", err));
+        }
+
+        function renderTable(data) {
+            document.getElementById('tableContainer').style.display = "block";
+            const tbody = document.getElementById('tableBody');
+            const tfoot = document.getElementById('tableFooter');
+            
+            tbody.innerHTML = ''; 
+            
+            let totalCredits = 0;
+
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row.sno}</td>
+                    <td>${row.subject}</td>
+                    <td>${row.credit}</td>
+                    <td>${row.type}</td>
+                `;
+                tbody.appendChild(tr);
+                totalCredits += parseFloat(row.credit);
+            });
+
+            // Add Total Row
+            tfoot.innerHTML = `
+                <tr class="total-row">
+                    <td colspan="2">Total Course Credit: &nbsp;</td>
+                    <td><b>${totalCredits.toFixed(1)}</b></td>
+                    <td>&nbsp;</td>
+                </tr>
+            `;
+        }
+    </script>
+
+</body>
+</html>

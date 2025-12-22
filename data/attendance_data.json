@@ -1,0 +1,48 @@
+[
+    {
+        "sno": 1,
+        "subject": "ADVANCED PROGRAMMING LAB-1 - CS206",
+        "lecture": null,
+        "tutorial": null,
+        "practical": { "attended": 10, "delivered": 12 }
+    },
+        {
+        "sno": 2,
+        "subject": "CAREER MANAGEMENT AND DEVELOPMENT - HS007",
+        "code": "HS007",
+        "lecture": { "attended": 6, "delivered": 10 },
+        "tutorial": null,
+        "practical": null
+    },
+    {
+        "sno": 3,
+        "subject": "DATA STRUCTURES - CS103",
+        "lecture": { "attended": 25, "delivered": 30 },
+        "tutorial": { "attended": 8, "delivered": 10 },
+        "practical": null
+    },
+    {
+        "sno": 4,
+        "subject": "DATA STRUCTURES LAB - CS203",
+        "lecture": null,
+        "tutorial": null,
+        "practical": { "attended": 12, "delivered": 14 }
+    },
+    {
+        "sno": 5,
+        "subject": "DIGITAL SYSTEMS AND MICROPROCESSORS - EC110",
+        "lecture": { "attended": 28, "delivered": 35 },
+        "tutorial": { "attended": 9, "delivered": 10 },
+        "practical": null
+    },   
+    {
+        "sno": 6,
+        "subject": "ADVANCED PROGRAMMING LAB-1 - CS206",
+        "code": "CS206", 
+        "lecture": null,
+        "tutorial": null,
+        "practical": { "attended": 10, "delivered": 12 }
+    }
+
+
+]

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>JUET [ View Student Subject Marks (Eventwise) ]</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    
+    <style>
+        body { background-color: #fce9c5; margin: 0; font-family: Verdana, Arial, sans-serif; }
+        
+        .page-title {
+            color: #a52a2a; 
+            font-size: medium; 
+            font-family: verdana; 
+            font-weight: bold;
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Top Filter Table */
+        .info-table {
+            border-collapse: separate;
+            border-spacing: 1px;
+            border: 1px solid black;
+            font-family: Arial;
+            font-size: 13px;
+            background-color: transparent;
+        }
+        .info-table td { padding: 4px; }
+        
+        /* Main Marks Table */
+        .marks-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial;
+            font-size: 14px; 
+            border: 1px solid black; /* Outer border */
+            margin-top: 10px;
+            background-color: #fce9c5;
+        }
+        
+        /* HEADER STYLING - Orange Background, White Separators */
+        .marks-table th { 
+            background-color: #ff8c00; /* Explicit Orange */
+            color: white; 
+            font-weight: bold;
+            padding: 4px; 
+            border-right: 1px solid white; /* White column separator */
+            border-bottom: 1px solid white;
+            text-align: left; 
+        }
+        
+        /* DATA ROW STYLING - White Background, Black Row Separators, White Col Separators */
+        .marks-table td { 
+            padding: 3px; 
+            background-color: white; 
+            color: black;
+            border-bottom: 1px solid black; /* Black row separator */
+            border-right: 1px solid white; /* White column separator */
+            text-align: left; 
+        }
+
+        /* Remove the right border from the last column */
+        .marks-table th:last-child, 
+        .marks-table td:last-child {
+            border-right: none;
+        }
+        
+        /* Specific styling for the 'Absent/Detained' text */
+        .status-red { color: red; font-size: 13px; }
+        
+        .print-btn { margin-top: 15px; }
+        
+        .sort-arrow { width: 10px; height: 10px; margin-left: 5px; vertical-align: middle; }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-title">Student Subject Marks (Eventwise)</div>
+
+    <form onsubmit="event.preventDefault(); loadMarks();">
+        <table class="info-table" align="center" rules="groups">
+            <tbody>
+                <tr>
+                    <td>
+                        <font color="#00008b"><strong> Name:&nbsp;</strong></font>Rohil Soni[241B629]
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00008b"><strong>Course/Branch:&nbsp;</strong></font>B.T.(CSAIML)
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00008b"><strong>Current Semester:&nbsp;</strong></font>3
+                    </td>
+                </tr>
+                <tr>
+                    <td align="CENTER">
+                        <hr>
+                        &nbsp;&nbsp;<font color="#00008b"><strong>Exam Code</strong></font>
+                        <select id="examCode" style="WIDTH: 120px">    
+                            <option value="2025ODDSEM" selected>2025ODDSEM</option>
+                        </select>
+                        &nbsp;<input type="submit" value="Show">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <div id="tableContainer" style="display: none;">
+        <table class="marks-table" id="marksTable" align="center">
+            <thead>
+                <tr id="headerRow"></tr>
+            </thead>
+            <tbody id="tableBody">
+                </tbody>
+        </table>
+        
+        <center>
+            <input type="button" class="print-btn" onclick="window.print();" value="Click To Print">
+        </center>
+    </div>
+
+    <script>
+        function loadMarks() {
+            // Fetch data
+            fetch('../../data/marks_data.json')
+                .then(response => response.json())
+                .then(data => renderTable(data))
+                .catch(err => console.error("Error loading marks:", err));
+        }
+
+        function renderTable(data) {
+            // Show container
+            document.getElementById('tableContainer').style.display = "block";
+            
+            const headerRow = document.getElementById('headerRow');
+            const tbody = document.getElementById('tableBody');
+            
+            // 1. Build Header
+            let headersHtml = `<th>Sr.No.<img src="../../assets/images/blank.png" class="sort-arrow"></th>
+                               <th>Subject(Code)<img src="../../assets/images/blank.png" class="sort-arrow"></th>`;
+            
+            data.headers.forEach(h => {
+                headersHtml += `<th>${h.label}<img src="../../assets/images/blank.png" class="sort-arrow"></th>`;
+            });
+            headerRow.innerHTML = headersHtml;
+
+            // 2. Build Rows
+            tbody.innerHTML = ''; // Clear previous
+            
+            data.rows.forEach(row => {
+                const tr = document.createElement('tr');
+                
+                // Start with SNo and Subject
+                let rowHtml = `<td>&nbsp;${row.sno}.</td><td>${row.subject}</td>`;
+                
+                // Loop through defined headers to find matching data
+                data.headers.forEach(h => {
+                    let val = row.marks[h.key];
+                    
+                    if (!val) {
+                        // Empty cell
+                        rowHtml += `<td>&nbsp;</td>`;
+                    } else if (val === "Absent" || val === "Detained") {
+                        // Red styling for absent/detained
+                        rowHtml += `<td>&nbsp;<font class="status-red">${val} </font></td>`;
+                    } else {
+                        // Normal marks
+                        rowHtml += `<td>${val}</td>`;
+                    }
+                });
+                
+                tr.innerHTML = rowHtml;
+                tbody.appendChild(tr);
+            });
+        }
+    </script>
+
+</body>
+</html>
