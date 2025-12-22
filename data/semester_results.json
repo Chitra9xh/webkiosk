@@ -4,17 +4,19 @@
         "sgpa": 4.8,
         "cgpa": 4.44,
         "subjects": [
-            { "code": "CS103", "name": "DATA STRUCTURES", "gp": 4, "credit": 4, "earned": 4, "sgpa_pts": 16, "cgpa_pts": 16, "grade": "P", "fail": "N" },
-            { "code": "CS104", "name": "DATABASE SYSTEMS", "gp": 4, "credit": 4, "earned": 4, "sgpa_pts": 16, "cgpa_pts": 16, "grade": "P", "fail": "N" },
-            { "code": "EC110", "name": "DIGITAL SYSTEMS AND MICROPROCESSORS", "gp": 5, "credit": 4, "earned": 4, "sgpa_pts": 20, "cgpa_pts": 20, "grade": "C", "fail": "N" },
+            { "code": "CS103", "name": "DATA STRUCTURES", "gp": 4, "credit": 4, "earned": 4, "sgpa_pts": 16, "cgpa_pts": 16, "grade": "B", "fail": "N" },
+            { "code": "CS104", "name": "DATABASE SYSTEMS", "gp": 4, "credit": 4, "earned": 4, "sgpa_pts": 16, "cgpa_pts": 16, "grade": "C", "fail": "N" },
+            { "code": "EC110", "name": "DIGITAL SYSTEMS AND MICROPROCESSORS", "gp": 5, "credit": 4, "earned": 4, "sgpa_pts": 20, "cgpa_pts": 20, "grade": "B+", "fail": "N" },
             { "code": "HS103", "name": "TECHNIQUES FOR DECISION MAKING", "gp": 6, "credit": 3, "earned": 3, "sgpa_pts": 18, "cgpa_pts": 18, "grade": "B", "fail": "N" },
             { "code": "CS206", "name": "ADVANCED PROGRAMMING LAB-1", "gp": 5, "credit": 1, "earned": 1, "sgpa_pts": 5, "cgpa_pts": 5, "grade": "C", "fail": "N" },
-            { "code": "CS203", "name": "DATA STRUCTURES LAB", "gp": 4, "credit": 1, "earned": 1, "sgpa_pts": 4, "cgpa_pts": 4, "grade": "P", "fail": "N" },
+            { "code": "CS203", "name": "DATA STRUCTURES LAB", "gp": 4, "credit": 1, "earned": 1, "sgpa_pts": 4, "cgpa_pts": 4, "grade": "B", "fail": "N" },
             { "code": "CS204", "name": "DATABASE SYSTEMS LAB", "gp": 5, "credit": 1, "earned": 1, "sgpa_pts": 5, "cgpa_pts": 5, "grade": "C", "fail": "N" },
             { "code": "EC210", "name": "DIGITAL SYSTEMS AND MICROPROCESSORS LAB", "gp": 7, "credit": 1, "earned": 1, "sgpa_pts": 7, "cgpa_pts": 7, "grade": "B+", "fail": "N" },
-            { "code": "CS205", "name": "UI/UX LAB", "gp": 5, "credit": 1, "earned": 1, "sgpa_pts": 5, "cgpa_pts": 5, "grade": "C", "fail": "N" },
+            { "code": "CS205", "name": "UI/UX LAB", "gp": 5, "credit": 1, "earned": 1, "sgpa_pts": 5, "cgpa_pts": 5, "grade": "B+", "fail": "N" },
             { "code": "HS007", "name": "CAREER MANAGEMENT AND DEVELOPMENT", "gp": 0, "credit": 0, "earned": 0, "sgpa_pts": 0, "cgpa_pts": 0, "grade": "AP", "fail": "N" },
-            { "code": "GE001", "name": "ENVIRONMENTAL SCIENCE", "gp": 0, "credit": 0, "earned": 0, "sgpa_pts": 0, "cgpa_pts": 0, "grade": "AB", "fail": "Y", "highlight": true }
+            ""{ "code": "GE001", "name": "ENVIRONMENTAL SCIENCE", "gp": 0, "credit": 0, "earned": 0, "sgpa_pts": 0, "cgpa_pts": 0, "grade": "AB", "fail": "Y", "highlight": true }""
+            { "code": "GE001", "name": "ENVIRONMENTAL SCIENCE", "gp": 0, "credit": 0, "earned": 0, "sgpa_pts": 0, "cgpa_pts": 0, "grade": "AB", "fail": "N"}
+
         ],
         "total": {
             "gp": 45.0, "credit": 20.0, "earned": 20.0, "sgpa_pts": 96.0, "cgpa_pts": 96.0
