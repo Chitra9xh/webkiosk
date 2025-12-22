@@ -1,14 +1,6 @@
 [
     {
         "semester": 2,
-        "subject": "DISCRETE MATHEMATICS (MA105)",
-        "type": "CORE",
-        "credit": 4.0,
-        "remarks": "Fail",
-        "status": "Registered"
-    },
-    {
-        "semester": 2,
         "subject": "ELECTRICAL SCIENCE (EC101)",
         "type": "CORE",
         "credit": 4.0,
