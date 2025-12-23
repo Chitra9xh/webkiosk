@@ -14,7 +14,7 @@
             { "code": "EC210", "name": "DIGITAL SYSTEMS AND MICROPROCESSORS LAB", "gp": 7, "credit": 1, "earned": 1, "sgpa_pts": 7, "cgpa_pts": 7, "grade": "B+", "fail": "N" },
             { "code": "CS205", "name": "UI/UX LAB", "gp": 5, "credit": 1, "earned": 1, "sgpa_pts": 5, "cgpa_pts": 5, "grade": "B+", "fail": "N" },
             { "code": "HS007", "name": "CAREER MANAGEMENT AND DEVELOPMENT", "gp": 0, "credit": 0, "earned": 0, "sgpa_pts": 0, "cgpa_pts": 0, "grade": "AP", "fail": "N" },
-            { "code": "GE001", "name": "ENVIRONMENTAL SCIENCE", "gp": 0, "credit": 0, "earned": 0, "sgpa_pts": 0, "cgpa_pts": 0, "grade": "AB", "fail": "N"}
+            { "code": "GE001", "name": "ENVIRONMENTAL SCIENCE", "gp": 0, "credit": 0, "earned": 0, "sgpa_pts": 0, "cgpa_pts": 0, "grade": "AB", "fail": "N" }
 
         ],
         "total": {
