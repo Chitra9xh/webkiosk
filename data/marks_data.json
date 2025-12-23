@@ -20,7 +20,6 @@
         { "sno": 10, "subject": "ENVIRONMENTAL SCIENCE- GE001", "marks": { "t2": "12.0", "t3": "26.0" } },
         { "sno": 11, "subject": "ENGINEERING PHYSICS - 2- PH102", "marks": { "t1_a": "3.5", "t2": "10.5", "t3": "22.0" } },
         { "sno": 12, "subject": "DIGITAL SYSTEMS AND MICROPROCESSORS- EC110", "marks": { "t1_a": "6.0", "t2": "3.0", "t3": "19.0" } },
-        { "sno": 13, "subject": "UI/UX LAB- CS205", "marks": { "p1": "9.0", "p2": "11.0" } },
-        ""{ "sno": 14, "subject": "INTRODUCTION TO ENGINEERING SIMULATIONS- ME005", "marks": { "t2": "Absent", "t3": "Absent" } }""
+        { "sno": 13, "subject": "UI/UX LAB- CS205", "marks": { "p1": "9.0", "p2": "11.0" } }
     ]
 }
